@@ -1,18 +1,14 @@
-import { Button } from '@mui/material';
-import { t } from 'i18next';
-import LanguageToggle from '@/components/atoms/LanguageToggle/LanguageToggle';
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Login from"@/pages/Login/Login"
+import Home from"@/pages/Home/Home"
 function App() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="p-6 bg-white rounded-lg shadow-lg">
-        <h1 className="text-2xl font-bold text-red-400">{t("welcome")}</h1>
-        <Button variant="contained" color="primary">
-          Click Me
-        </Button>
-        <LanguageToggle/>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
